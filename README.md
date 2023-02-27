@@ -1,15 +1,15 @@
 # Проект: Место
 **О проекте**
-Данный проект - интерактивный сервис Mesto, где можно редактировать свой профиль, добавлять фотографии, удалять их и ставить лайки.
+* Данный проект - интерактивный сервис Mesto, где можно редактировать свой профиль, добавлять фотографии, удалять их и ставить лайки.
 
 ## Технологический стек и функциональность:
 
-## HTML
+**HTML**
 * Семантические теги;
 * Верстка сайта используя макет из Figma;
 * Использование Perfect Pixel.
 
-## CSS
+**CSS**
 * БЭМ Nested;
 * Grid Layout;
 * Flexbox;
@@ -17,7 +17,7 @@
 * Использованием медиа-запросов;
 * Позиционирование блоков и элементов.
 
-## JS
+**JS**
 * Реализовано открытие PopUp при нажатии кнопки "Редактировать". И закрытие при клике на крестик в правом верхнем углу.
 * Поля формы заполненны теми значениями, которые отображаются на странице.
 * Добавлена возможность редактирование имени и информации о себе.
@@ -34,17 +34,17 @@
 
 
 # Project: Mesto
-## About project
-This project is an interactive service Mesto, where you can edit your profile, add photos, delete them and give likes.
+**About project**
+* This project is an interactive service Mesto, where you can edit your profile, add photos, delete them and give likes.
 
 ## Technological stack and functionality:
 
-## HTML
+**HTML**
 * Semantic tags;
 * Layout of the site using the layout from Figma;
 * Using Perfect Pixel.
 
-## CSS
+**CSS**
 * BEM Nested;
 * Grid Layout;
 * Flexbox;
@@ -52,7 +52,7 @@ This project is an interactive service Mesto, where you can edit your profile, a
 * Use of media queries;
 * Block and element positioning.
 
-## JS
+**JS**
 * Implemented opening of PopUp when "Edit" button is clicked. And closing by clicking on cross in upper right corner.
 * Form fields are filled with the values that are displayed on the page.
 * Added the possibility to edit the name and information about yourself.
