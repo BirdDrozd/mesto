@@ -23,6 +23,7 @@
 * Добавлена возможность редактирование имени и информации о себе.
 
 ## Посмотреть проект
+**Сайт**
 * [Ссылка на проект](https://birddrozd.github.io/mesto/)
 
 
@@ -57,6 +58,7 @@ This project is an interactive service Mesto, where you can edit your profile, a
 * Added the possibility to edit the name and information about yourself.
 
 ## View Project
+**Website**
 * [Link to the project](https://birddrozd.github.io/mesto/)
 
 **Figma**
