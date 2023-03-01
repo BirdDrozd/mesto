@@ -5,4 +5,10 @@
   background-size: cover;
   height: 19px;
   width: 22px;
+  border: none;
+  background-color: #fff;
+}
+
+.element__button-like:not(.element__button-like_active):hover {
+	opacity: 0.5;
 }
