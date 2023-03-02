@@ -1,4 +1,9 @@
 .popup__form {
-  padding-right: 36px;
   width: 358px;
+  border: none;
+  font-family: Inter,Arial,sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
 }
