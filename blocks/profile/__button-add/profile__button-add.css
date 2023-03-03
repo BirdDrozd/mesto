@@ -11,11 +11,15 @@
   border: 2px solid #fff;
   border-radius: 2px;
   padding: 0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   transition: opacity .3s ease;
 }
 
-@media screen and (max-width: 1080px) {
+.profile__button-add:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 1140px) {
   .profile__button-add {
     background-size: 16px 16px;
     width: 282px;

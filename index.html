@@ -30,42 +30,42 @@
         <img src="./images/Karachayevsk.png" class="element__photo" alt="фото Карачаево-Черкеск">
         <div class="element__description">
           <h2 class="element__caption">Карачаево-Черкеск</h2>
-          <button class="element__button-like"></button>
+          <button class="element__button-like" type="button"></button>
         </div>
       </article>
       <article class="element">
         <img src="./images/MountElbrus.png" class="element__photo" alt="фото горы Эльбрус">
         <div class="element__description">
           <h2 class="element__caption">Гора Эльбрус</h2>
-          <button class="element__button-like"></button>
+          <button class="element__button-like" type="button"></button>
         </div>
       </article>
       <article class="element">
         <img src="./images/Dombay.png" class="element__photo" alt="фото Домбай">
         <div class="element__description">
           <h2 class="element__caption">Домбай</h2>
-          <button class="element__button-like"></button>
+          <button class="element__button-like" type="button"></button>
         </div>
       </article>
       <article class="element">
         <img src="./images/NewZeland.jpg" class="element__photo" alt="фото Новой Зеландии">
         <div class="element__description">
           <h2 class="element__caption">Новая Зеландии</h2>
-          <button class="element__button-like"></button>
+          <button class="element__button-like" type="button"></button>
         </div>
       </article>
       <article class="element">
         <img src="./images/Lisbon.jpg" class="element__photo" alt="фото Лиссабон">
         <div class="element__description">
           <h2 class="element__caption">Лиссабон</h2>
-          <button class="element__button-like"></button>
+          <button class="element__button-like" type="button"></button>
         </div>
       </article>
       <article class="element">
         <img src="./images/Santorini.jpg" class="element__photo" alt="фото Санторини">
         <div class="element__description">
           <h2 class="element__caption">Санторини</h2>
-          <button class="element__button-like"></button>
+          <button class="element__button-like" type="button"></button>
         </div>
       </article>
     </section>
@@ -73,13 +73,13 @@
   <footer class="footer">
     <p class="footer__copyright">© 2023 Mesto Russia</p>
   </footer>
-  <section class="popup popup_hidden popup_opened">
+  <section class="popup">
     <div class="popup__container">
       <button type="button" class="popup__button-close"></button>
       <h2 class="popup__heading">Редактировать профиль</h2>
       <form class="popup__form" name="profileEdit">
-        <input type="text" placeholder="Имя" class="popup__name" id="user-name" name="user-name" required>
-        <input type="text" placeholder="О Себе" class="popup__about" id="user-about" name="user-about">
+        <input type="text" placeholder="Имя" class="popup__input popup__input_name" id="user-name" name="user-name" required>
+        <input type="text" placeholder="О себе" class="popup__input popup__input_about" id="user-about" name="user-about">
         <button type="submit" class="popup__button-save">Сохранить</button>
       </form>
     </div>
