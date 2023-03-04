@@ -13,8 +13,8 @@ function closePopup() {
   popup.classList.remove("popup_opened")
 }
 
-let nameInput = popup.querySelector(".popup__input_name");
-let aboutInput = popup.querySelector(".popup__input_about");
+let nameInput = popup.querySelector(".popup__input_value_bio-name");
+let aboutInput = popup.querySelector(".popup__input_value_bio-about");
 let popupForm = popup.querySelector(".popup__form");
 let profileName = document.querySelector(".profile__name");
 let profileAbout = document.querySelector(".profile__about");
