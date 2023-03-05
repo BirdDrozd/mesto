@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
   .popup__container {
     max-width: 282px;
     max-height: 322px;
