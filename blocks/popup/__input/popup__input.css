@@ -14,9 +14,3 @@
 .popup__input:first-child {
   margin-top: 0;
 }
-  
-@media screen and (max-width: 500px) {
-  .popup__input {
-    width: 238px;
-  }
-}
