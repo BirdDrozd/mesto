@@ -37,7 +37,7 @@ const profileButtonEdit = document.querySelector('.profile__button-edit');
 const cardAddButton = document.querySelector('.profile__button-add');
 const elementsSection = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#element__template');
-const popupButtonClose = document.querySelectorAll('.popup__button-close');
+const popupCloseButtons = document.querySelectorAll('.popup__button-close');
 const popupEditProfile = document.querySelector('#profile');
 const popupEditButtonClose = popupEditProfile.querySelector('.popup__button-close');
 const popupEditNameInput = popupEditProfile.querySelector('.popup__input_value_bio-name');
@@ -104,7 +104,7 @@ cardAddButton.addEventListener('click', function() {
 	openPopup(popupElementAdd);
 });
 
-popupButtonClose.forEach((button) => {
+popupCloseButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
