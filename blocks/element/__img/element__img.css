@@ -1,0 +1,7 @@
+.element__img {
+	width: 100%;
+	grid-area: card;
+	object-position: center;
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
+}

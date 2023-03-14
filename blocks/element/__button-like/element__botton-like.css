@@ -1,5 +1,5 @@
 .element__button-like {
-  margin: 0;
+  margin: 31px 0 0;
   padding: 0;
   background-image: url(../../../images/like.svg);
   background-position: center;
@@ -10,6 +10,7 @@
   border: none;
   background-color: #fff;
   cursor: pointer;
+  grid-area: like;
 }
 
 .element__button-like:not(.element__button-like_active):hover {

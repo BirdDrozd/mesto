@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,12 @@
   <title>Mesto</title>
   <link rel="stylesheet" href="./pages/index.css">
 </head>
+
 <body class="page">
   <header class="header">
     <img src="./images/logo.svg" class="header__logo" alt="Лого">
   </header>
+
   <main class="content">
     <section class="profile">
       <div class="profile__intro-container">
@@ -26,64 +29,57 @@
       <button type="button" class="profile__button-add"></button>
     </section>
     <section class="elements">
-      <article class="element">
-        <img src="./images/Karachayevsk.png" class="element__photo" alt="фото Карачаево-Черкеск">
-        <div class="element__description">
-          <h2 class="element__caption">Карачаево-Черкеск</h2>
-          <button class="element__button-like" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/MountElbrus.png" class="element__photo" alt="фото горы Эльбрус">
-        <div class="element__description">
-          <h2 class="element__caption">Гора Эльбрус</h2>
-          <button class="element__button-like" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/Dombay.png" class="element__photo" alt="фото Домбай">
-        <div class="element__description">
-          <h2 class="element__caption">Домбай</h2>
-          <button class="element__button-like" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/NewZeland.jpg" class="element__photo" alt="фото Новой Зеландии">
-        <div class="element__description">
-          <h2 class="element__caption">Новая Зеландии</h2>
-          <button class="element__button-like" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/Lisbon.jpg" class="element__photo" alt="фото Лиссабон">
-        <div class="element__description">
-          <h2 class="element__caption">Лиссабон</h2>
-          <button class="element__button-like" type="button"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img src="./images/Santorini.jpg" class="element__photo" alt="фото Санторини">
-        <div class="element__description">
-          <h2 class="element__caption">Санторини</h2>
-          <button class="element__button-like" type="button"></button>
-        </div>
-      </article>
     </section>
   </main>
+
   <footer class="footer">
     <p class="footer__copyright">© 2023 Mesto Russia</p>
   </footer>
-  <section class="popup">
-    <div class="popup__container">
-      <button type="button" class="popup__button-close"></button>
-      <h2 class="popup__heading">Редактировать профиль</h2>
-      <form class="popup__form" name="profileEdit">
-        <input type="text" placeholder="Имя" class="popup__input popup__input_value_bio-name" id="user-name" name="user-name" required>
-        <input type="text" placeholder="О себе" class="popup__input popup__input_value_bio-about" id="user-about" name="user-about">
-        <button type="submit" class="popup__button-save">Сохранить</button>
-      </form>
+
+    <div class="popup" id="profile">
+      <div class="popup__container">
+        <button type="button" class="popup__button-close"></button>
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <form class="popup__form" name="profileEdit">
+          <input type="text" placeholder="Имя" class="popup__input popup__input_value_bio-name" id="user-name" name="user-name" required>
+          <input type="text" placeholder="О себе" class="popup__input popup__input_value_bio-about" id="user-about" name="user-about">
+          <button type="submit" class="popup__button-save">Сохранить</button>
+        </form>
+      </div>
     </div>
-  </section>
+
+    <div class="popup" id="element-add">
+      <div class="popup__container">
+        <button type="button" class="popup__button-close"></button>
+        <h2 class="popup__heading">Новое место</h2>
+        <form class="popup__form" name="profileEdit">
+          <input type="text" placeholder="Название" class="popup__input popup__input_value_place-name" id="place-name" name="place-name" required>
+          <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_value_place-pic-url" id="place-pic-url" name="place-pic-url" required>
+          <button type="submit" class="popup__button-save">Создать</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="popup" id="element-full-screen">
+      <div class="popup__element-full-screen">
+        <button type="button" class="popup__button-close"></button>
+        <figure class="popup__element-box">
+          <img class="popup__element-img" src="#" alt="#">
+          <figcaption class="popup__element-name"></figcaption>
+        </figure>
+      </div>
+    </div>
+  
+    <template id="element__template">
+      <article class="element__container">
+        <button type="button" class="element__waste-bin"></button>
+        <img class="element__img" src="#" alt="#">
+        <h2 class="element__name"></h2>
+        <button type="button" class="element__button-like"></button>
+      </article>
+    </template>
+  
   <script src="./scripts/index.js"></script>
 </body>
+
 </html>
