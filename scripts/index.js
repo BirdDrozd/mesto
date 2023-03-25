@@ -52,6 +52,7 @@ const popupElementFullScreen = document.querySelector('#element-full-screen');
 const popupElementFullScreenButtonClose = popupElementFullScreen.querySelector('.popup__button-close');
 const popupElementFullScreenName = popupElementFullScreen.querySelector('.popup__element-name');
 const popupElementFullScreenImg = popupElementFullScreen.querySelector('.popup__element-img');
+const popupShuts = document.querySelectorAll('.popup')
 
 initialCards.forEach((card) => {
 	const cardData = createCard(card);
@@ -60,9 +61,11 @@ initialCards.forEach((card) => {
 
 function openPopup (popup) {
 	popup.classList.add('popup_opened');
+	document.addEventListener('keydown', closeByEscape);
 }
 function closePopup (popup) {
 	popup.classList.remove('popup_opened');
+	document.removeEventListener('keydown', closeByEscape);
 }
 function createCard (card) {
 	const cardElement = cardTemplate.content.cloneNode(true);
@@ -95,13 +98,26 @@ function workElementFullScreen (img) {
 	openPopup(popupElementFullScreen);
 };
 
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened')
+    closePopup(openedPopup)
+  }
+}
+
 profileButtonEdit.addEventListener('click', function() {
 	openPopup(popupEditProfile);
 	popupEditNameInput.value = profileName.textContent;
 	popupEditAboutInput.value = profileAbout.textContent;
 });
 cardAddButton.addEventListener('click', function() {
-	openPopup(popupElementAdd);
+	openPopup(popupElementAdd, config);
+	const formList = Array.from(document.querySelectorAll(config.formSelector))
+	formList.forEach(form => {
+		const inputList = Array.from(form.querySelectorAll(config.inputSelector))
+		const buttonSave = form.querySelector(config.submitButtonSelector)
+	toggleButtonState (inputList, buttonSave, config.inactiveButtonClass)
+	})
 });
 
 popupCloseButtons.forEach((button) => {
@@ -109,24 +125,24 @@ popupCloseButtons.forEach((button) => {
   button.addEventListener('click', () => closePopup(popup));
 });
 
-popupEditFormSave.addEventListener('submit', function(event) {
-	event.preventDefault();
+popupEditFormSave.addEventListener('submit', function(evt) {
+	evt.preventDefault();
 	profileName.textContent = popupEditNameInput.value;
 	profileAbout.textContent = popupEditAboutInput.value;
 	closePopup(popupEditProfile);
 });
 
-photoAddPopupFormSave.addEventListener('submit', function(event) {
-	event.preventDefault();
+photoAddPopupFormSave.addEventListener('submit', function(evt) {
+	evt.preventDefault();
 	const name = popupElementAddInputName.value;
   const link = popupElementAddInputPic.value;
 	const alt = `Фото из ${name}`
-	const newCard = {
-		link,
-		name,
-		alt,
-	};
+	const newCard = {link, name, alt,};
 	addCard(newCard);
-	event.target.reset();
+	evt.target.reset();
 	closePopup(popupElementAdd);
+});
+
+popupShuts.forEach((popup) => {
+	popup.addEventListener('click', (evt) => evt.target === popup ? closePopup(popup) : '')
 });
