@@ -2,32 +2,26 @@ const initialCards = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-    alt: 'Фото Архыза'
   },
   {
     name: 'Челябинская область',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-    alt: 'Фото Челябинской области'
   },
   {
     name: 'Иваново',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-    alt: 'Фото Иваново'
   },
   {
     name: 'Камчатка',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-    alt: 'Фото Камчатки'
   },
   {
     name: 'Холмогорский район',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-    alt: 'Фото Холмогорского район'
   },
   {
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-    alt: 'Фото Байкала'
   }
 ];
 
@@ -91,7 +85,6 @@ function workElementButtonDelete (button) {
 function workElementFullScreen (img) {
 	const actualImg = img.target.closest('.element__img');
 	const actualContainer = actualImg.closest('.element__container');
-	popupElementFullScreen.style = "background-color: rgba(0, 0, 0, 0.9)";
 	popupElementFullScreenImg.setAttribute('src', actualImg.src);
 	popupElementFullScreenImg.setAttribute('alt', actualImg.alt);
 	popupElementFullScreenName.textContent = actualContainer.querySelector('.element__name').textContent;
@@ -112,7 +105,7 @@ profileButtonEdit.addEventListener('click', function() {
 });
 cardAddButton.addEventListener('click', function() {
 	openPopup(popupElementAdd, config);
-	const formList = Array.from(document.querySelectorAll(config.formSelector))
+	const formList = Array.from(document.querySelector(config.formSelector))
 	formList.forEach(form => {
 		const inputList = Array.from(form.querySelectorAll(config.inputSelector))
 		const buttonSave = form.querySelector(config.submitButtonSelector)
