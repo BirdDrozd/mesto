@@ -24,6 +24,8 @@
 * Добавлена возможность ставить лайк.
 * Добавлена возможность удалять карточки.
 * Добавлена возможность открывать на весь экран карточки.
+* Добавлена валидация форм.
+* Добавлена возможность закрытия попапа по оверлей и Esc
 
 
 
@@ -61,6 +63,8 @@
 * Added possibility to give a nickname.
 * Added ability to remove cards.
 * Added ability to open cards in full screen.
+* Added form validation.
+* Added ability to close the popup by overlay and Esc
 
 ## View project
 **Site**
