@@ -17,11 +17,11 @@ function setEventListener(form, inputList, buttonSave, config) {
 }
 
 function isInputValidity(input, form, config) {
-  const errorSpace = form.querySelector(`${config.templateErrorSelector}${input.name}`);
+  const error = form.querySelector(`${config.templateErrorSelector}${input.name}`);
   if (input.validity.valid) {
-    hideErrorInput(input, errorSpace, form, config);
+    hideErrorInput(input, form, config);
   } else {
-    displayErrorInput(input, errorSpace, form, config);
+    displayErrorInput(input, form, config, error);
   }
 }
 
@@ -47,16 +47,15 @@ function buttonDisable(buttonSave, inactiveButtonClass) {
   buttonSave.disabled = true;
 }
 
-function displayErrorInput(input, errorSpace, form, config) {
-  const error = errorSpace || input.nextElementSibling;
+function displayErrorInput(input, form, config, error) {
   input.classList.add(config.inputErrorClass);
   error.textContent = input.validationMessage;
   error.classList.add(config.errorClass);
   form.classList.add(config.formErrorClass);
 }
 
-function hideErrorInput(input, errorSpace, form, config) {
-  const error = errorSpace || input.nextElementSibling;
+function hideErrorInput(input, form, config) {
+  const error = form.querySelector(`${config.templateErrorSelector}${input.name}`);
   input.classList.remove(config.inputErrorClass);
   error.textContent = ' ';
   error.classList.remove(config.errorClass);
