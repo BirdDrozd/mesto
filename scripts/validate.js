@@ -47,7 +47,8 @@ function buttonDisable(buttonSave, inactiveButtonClass) {
   buttonSave.disabled = true;
 }
 
-function displayErrorInput(input, form, config, error) {
+function displayErrorInput(input, form, config) {
+  const error = form.querySelector(`${config.templateErrorSelector}${input.name}`);
   input.classList.add(config.inputErrorClass);
   error.textContent = input.validationMessage;
   error.classList.add(config.errorClass);
