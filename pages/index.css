@@ -41,4 +41,4 @@
 @import url(../blocks/popup/__element-name/popup__element-name.css);
 @import url(../blocks/popup/__error/popup__error.css);
 @import url(../blocks/popup/__error/_visible/popup__error_visible.css);
-@import url(../blocks/popup/__element-full-screen/_background/popup__element-full-screen_background.css);
+@import url(../blocks/popup/__element/_background/popup__element_background.css);
