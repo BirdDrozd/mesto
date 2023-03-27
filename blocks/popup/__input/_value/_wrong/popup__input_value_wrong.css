@@ -1,9 +1,4 @@
 .popup__input_value_wrong {
-	border-bottom: 1px solid #f00;
-	color: #f00;
-	margin-top: 13px;
-}
-
-.popup__input_value_wrong:first-child {
-	margin-top: 35px;
+  border-bottom: 1px solid #F00;
+  margin-bottom: 0;
 }

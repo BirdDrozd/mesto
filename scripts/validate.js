@@ -52,7 +52,7 @@ function displayErrorInput(input, form, config) {
   input.classList.add(config.inputErrorClass);
   error.textContent = input.validationMessage;
   error.classList.add(config.errorClass);
-  form.classList.add(config.formErrorClass);
+  error.style.display = 'block';
 }
 
 function hideErrorInput(input, form, config) {
@@ -60,7 +60,6 @@ function hideErrorInput(input, form, config) {
   input.classList.remove(config.inputErrorClass);
   error.textContent = ' ';
   error.classList.remove(config.errorClass);
-  form.classList.remove(config.formErrorClass);
 }
 
 const config = {
@@ -71,7 +70,6 @@ const config = {
   inactiveButtonClass: 'popup__button-save_disable',
   inputErrorClass: 'popup__input_value_wrong',
   errorClass: 'popup__error_visible',
-  formErrorClass: 'popup__form_invalid'
 };
 
 enableValidation(config);

@@ -46,7 +46,8 @@ const popupElementFullScreen = document.querySelector('#element-full-screen');
 const popupElementFullScreenButtonClose = popupElementFullScreen.querySelector('.popup__button-close');
 const popupElementFullScreenName = popupElementFullScreen.querySelector('.popup__element-name');
 const popupElementFullScreenImg = popupElementFullScreen.querySelector('.popup__element-img');
-const popupShuts = document.querySelectorAll('.popup')
+const popupShuts = document.querySelectorAll('.popup');
+const formList = Array.from(document.querySelectorAll(config.formSelector));
 
 initialCards.forEach((card) => {
 	const cardData = createCard(card);
@@ -103,15 +104,18 @@ profileButtonEdit.addEventListener('click', function() {
 	popupEditNameInput.value = profileName.textContent;
 	popupEditAboutInput.value = profileAbout.textContent;
 });
+
+
+
 cardAddButton.addEventListener('click', function() {
 	openPopup(popupElementAdd, config);
-	const formList = Array.from(document.querySelector(config.formSelector))
 	formList.forEach(form => {
-		const inputList = Array.from(form.querySelectorAll(config.inputSelector))
-		const buttonSave = form.querySelector(config.submitButtonSelector)
-	toggleButtonState (inputList, buttonSave, config.inactiveButtonClass)
-	})
+		const inputList = Array.from(form.querySelectorAll(config.inputSelector));
+		const buttonSave = form.querySelector(config.submitButtonSelector);
+		toggleButtonState(inputList, buttonSave, config.inactiveButtonClass);
+	});
 });
+
 
 popupCloseButtons.forEach((button) => {
   const popup = button.closest('.popup');
