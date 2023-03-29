@@ -109,11 +109,10 @@ profileButtonEdit.addEventListener('click', function() {
 
 cardAddButton.addEventListener('click', function() {
 	openPopup(popupElementAdd, config);
-	formList.forEach(form => {
-		const inputList = Array.from(form.querySelectorAll(config.inputSelector));
-		const buttonSave = form.querySelector(config.submitButtonSelector);
-		toggleButtonState(inputList, buttonSave, config.inactiveButtonClass);
-	});
+	const form = popupElementAdd.querySelector(config.formSelector);
+	const inputList = Array.from(form.querySelectorAll(config.inputSelector));
+	const buttonSave = form.querySelector(config.submitButtonSelector);
+	toggleButtonState(inputList, buttonSave, config.inactiveButtonClass);
 });
 
 
@@ -142,4 +141,4 @@ photoAddPopupFormSave.addEventListener('submit', function(evt) {
 
 popupShuts.forEach((popup) => {
 	popup.addEventListener('click', (evt) => evt.target === popup ? closePopup(popup) : '')
-});
+}); 
