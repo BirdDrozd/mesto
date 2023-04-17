@@ -21,11 +21,8 @@
 * Реализовано открытие PopUp при нажатии кнопки "Редактировать", "Добавить" и нажатии на карточку. Закрытие при клике на крестик в правом верхнем углу.
 * Поля формы заполненны теми значениями, которые отображаются на странице.
 * Добавлена возможность редактирование имени и информации о себе.
-* Добавлена возможность ставить лайк.
-* Добавлена возможность удалять карточки.
-* Добавлена возможность открывать на весь экран карточки.
-* Добавлена валидация форм.
-* Добавлена возможность закрытия попапа по оверлей и Esc
+* Добавлена возможность ставить лайк; удалять карточки; открывать на весь экран карточки; валидация форм; закрытия попапа по оверлей и Esc.
+* Выполнен рефакторинг кода, в формате ООП, созданы файлы и классы Card и FormValidator.
 
 
 
@@ -59,12 +56,8 @@
 **JS**
 * Implemented opening of PopUp when you click "Edit", "Add" and click on the card. Closing by clicking on the cross in the upper right corner.
 * Form fields are filled with the values that are displayed on the page.
-* Added possibility to edit name and information about yourself.
-* Added possibility to give a nickname.
-* Added ability to remove cards.
-* Added ability to open cards in full screen.
-* Added form validation.
-* Added ability to close the popup by overlay and Esc
+* Added ability to like; delete cards; open full screen cards; form validation; close popup by overlay and Esc.
+* Code refactoring, in OOP format, created Card and FormValidator files and classes.
 
 ## View project
 **Site**
