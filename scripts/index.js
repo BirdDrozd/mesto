@@ -1,32 +1,6 @@
+import { initialCards } from './initialCards.js'; 
 import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  }
-];
 
 
 const configValidation = {
@@ -58,7 +32,6 @@ const popupElementFullScreen = document.querySelector('#element-full-screen');
 const popupElementFullScreenName = popupElementFullScreen.querySelector('.popup__element-name');
 const popupElementFullScreenImg = popupElementFullScreen.querySelector('.popup__element-img');
 const popupShuts = document.querySelectorAll('.popup');
-/*const formList = Array.from(document.querySelectorAll(config.formSelector));*/
 
 
 initialCards.forEach((card) => {
@@ -70,13 +43,16 @@ function openPopup (popup) {
 	popup.classList.add('popup_opened');
 	document.addEventListener('keydown', closeByEscape);
 }
+
 function closePopup (popup) {
 	popup.classList.remove('popup_opened');
 	document.removeEventListener('keydown', closeByEscape);
 }
+
 function addCard (dataCard) {
 	elementsSection.prepend(createCard(dataCard));	
 }
+
 function handlerCardLargeFormat (img) {
 	const currentImg = img.target.closest('.element__img');
 	const currentContainer = currentImg.closest('.element__container');
@@ -84,7 +60,8 @@ function handlerCardLargeFormat (img) {
 	popupElementFullScreenImg.setAttribute('alt', currentImg.alt);
 	popupElementFullScreenName.textContent = currentContainer.querySelector('.element__name').textContent;
 	openPopup(popupElementFullScreen);
-};
+}
+
 function closeByEscape(evt) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
@@ -128,8 +105,7 @@ photoAddPopupFormSave.addEventListener('submit', function(evt) {
 	evt.preventDefault();
 	const name = popupElementAddInputName.value;
   const link = popupElementAddInputPic.value;
-	const alt = `Фото из ${name}`
-	const dataCardNew = {link, name, alt,};
+	const dataCardNew = {link, name,};
 	addCard(dataCardNew);
 	evt.target.reset();
 	closePopup(popupElementAdd);
