@@ -53,14 +53,12 @@ function addCard (dataCard) {
 	elementsSection.prepend(createCard(dataCard));	
 }
 
-function handlerCardLargeFormat (img) {
-	const currentImg = img.target.closest('.element__img');
-	const currentContainer = currentImg.closest('.element__container');
-	popupElementFullScreenImg.setAttribute('src', currentImg.src);
-	popupElementFullScreenImg.setAttribute('alt', currentImg.alt);
-	popupElementFullScreenName.textContent = currentContainer.querySelector('.element__name').textContent;
+function handlerCardLargeFormat (name, link) {
+	popupElementFullScreenImg.setAttribute('src', link);
+	popupElementFullScreenImg.setAttribute('alt', name);
+	popupElementFullScreenName.textContent = name;
 	openPopup(popupElementFullScreen);
-}
+}; 
 
 function closeByEscape(evt) {
   if (evt.key === 'Escape') {
