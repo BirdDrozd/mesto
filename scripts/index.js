@@ -67,9 +67,16 @@ function closeByEscape(evt) {
   }
 }
 function createCard(dataCard) {
-	const cardElement = new Card(dataCard, cardTemplate, handlerCardLargeFormat).generateCard();
-
-	return cardElement;
+  const card = new Card(dataCard, cardTemplate, handlerCardLargeFormat);
+  const cardElement = card.generateCard();
+  const wasteBin = cardElement.querySelector('.element__waste-bin');
+  elementsSection.addEventListener('click', (evt) => {
+    if (evt.target === wasteBin) {
+      const element = wasteBin.closest('.element__container');
+      element.remove();
+    }
+  });
+  return cardElement;
 }
 
 
