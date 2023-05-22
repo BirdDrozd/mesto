@@ -1,8 +1,8 @@
 export class Card {
-  constructor (data, template, handlerCardClick) {
-    this._name = data.name;
-    this._link = data.link;
-    this._template = template;
+  constructor ( {dataCard, cardTemplate, handlerCardClick} ) {
+    this._name = dataCard.name;
+    this._link = dataCard.link;
+    this.cardTemplate = cardTemplate;
     this._handlerCardClick = handlerCardClick;
 
 
@@ -19,7 +19,7 @@ export class Card {
   }
   
   _getTemplate() {
-    return document.querySelector(this._template).content.cloneNode(true);
+    return document.querySelector(this.cardTemplate).content.cloneNode(true);
   }
   
   generateCard() {

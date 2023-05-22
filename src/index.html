@@ -6,18 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="page">
   <header class="header">
-    <img src="./images/logo.svg" class="header__logo" alt="Лого">
+    <img src="<%=require('./images/logo.svg')%>" class="header__logo" alt="Лого">
   </header>
 
   <main class="content">
     <section class="profile">
       <div class="profile__intro-container">
-        <img src="./images/avatar.jpg" class="profile__avatar" alt="аватар">
+        <img src="<%=require('./images/avatar.jpg')%>" class="profile__avatar" alt="аватар">
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -42,12 +41,12 @@
         <h2 class="popup__heading">Редактировать профиль</h2>
         <form class="popup__form" name="profileEdit" novalidate>
           <div class="popup__input-container">
-            <input type="text" placeholder="Имя" class="popup__input popup__input_value_bio-name" id="user-name" name="bio-name" minlength="2" maxlength="40" required>
-            <p class="popup__error popup__error_type_bio-name"></p>
+            <input type="text" placeholder="Имя" class="popup__input popup__input_value_bio-name" id="user-name" name="name" minlength="2" maxlength="40" required>
+            <p class="popup__error popup__error_type_name"></p>
           </div>
           <div class="popup__input-container">
-            <input type="text" placeholder="О себе" class="popup__input popup__input_value_bio-about" id="user-about" name="bio-about" minlength="2" maxlength="200" required>
-            <p class="popup__error popup__error_type_bio-about"></p>
+            <input type="text" placeholder="О себе" class="popup__input popup__input_value_bio-about" id="user-about" name="about" minlength="2" maxlength="200" required>
+            <p class="popup__error popup__error_type_about"></p>
           </div>
           <button type="submit" class="popup__button-save popup__button-save_disable">Сохранить</button>
         </form>
@@ -60,12 +59,12 @@
         <h2 class="popup__heading">Новое место</h2>
         <form class="popup__form" name="elementAdd" novalidate>
           <div class="popup__input-container">
-            <input type="text" placeholder="Название" class="popup__input popup__input_value_place-name" id="place-name" name="place-name" minlength="2" maxlength="30" required>
-            <p class="popup__error popup__error_type_place-name"></p>
+            <input type="text" placeholder="Название" class="popup__input popup__input_value_place-name" id="place-name" name="name" minlength="2" maxlength="30" required>
+            <p class="popup__error popup__error_type_name"></p>
           </div>
           <div class="popup__input-container">
-            <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_value_place-pic-url" id="place-pic-url" name="place-pic-url" required>
-            <p class="popup__error popup__error_type_place-pic-url"></p>
+            <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_value_place-pic-url" id="place-pic-url" name="src" required>
+            <p class="popup__error popup__error_type_src"></p>
           </div>
           <button type="submit" class="popup__button-save popup__button-save_disable">Создать</button>
         </form>
@@ -91,7 +90,6 @@
       </article>
     </template>
   
-  <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>
