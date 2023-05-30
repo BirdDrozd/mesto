@@ -10,7 +10,6 @@ export class Section {
 
 	sectionRenderer(items){
 		this._clear();
-
 		items.forEach(item => this._renderer(item));
 	}
 
@@ -19,6 +18,8 @@ export class Section {
 	}
 
 	addNewItem(item){
+		console.log('New item added:', item);
+
 		this._section.prepend(item);
 	}
 }

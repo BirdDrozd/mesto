@@ -48,17 +48,14 @@ const configValidation = {
 	inputErrorClass: 'popup__input_value_wrong',
 	errorClass: 'popup__error_visible'
 };
-const profileNameSelector = document.querySelector('.profile__name');
-const profileAboutSelector = document.querySelector('.profile__about');
+const profileNameSelector = '.profile__name';
+const profileAboutSelector = '.profile__about';
 const profileButtonEdit = document.querySelector('.profile__button-edit');
-const cardAddButton = document.querySelector('.profile__button-add');
-const elementsSectionSelector = document.querySelector('.elements');
+const cardAddButton = '.profile__button-add';
+const elementsSectionSelector = '.elements';
 const cardTemplateSelector = '#element__template';
-const popupCloseButtons = document.querySelectorAll('.popup__button-close');
-const popupEditProfileSelector = document.querySelector('#profile');
-const popupEditNameInput = popupEditProfileSelector.querySelector('.popup__input_value_bio-name');
-const popupEditAboutInput = popupEditProfileSelector.querySelector('.popup__input_value_bio-about');
-const popupEditFormSave = popupEditProfileSelector.querySelector('.popup__form');
-const popupElementAddSelector = document.querySelector('#element-add');
-const photoAddPopupFormSave = popupElementAddSelector.querySelector('.popup__form');
-const popupElementFullScreenSelector = document.querySelector('#element-full-screen');
+const popupEditProfileSelector = '#profile';
+const popupEditFormSave = '.popup__form';
+const popupElementAddSelector = '#element-add';
+const photoAddPopupFormSave = '.popup__form';
+const popupElementFullScreenSelector = '#element-full-screen';

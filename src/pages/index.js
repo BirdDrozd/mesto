@@ -1,5 +1,21 @@
+console.log('Index.js loaded');
+
 import  './index.css';
-import { initialCards, configValidation, profileNameSelector, profileAboutSelector, profileButtonEdit, cardAddButton, elementsSectionSelector, cardTemplateSelector, popupEditProfileSelector, popupEditFormSave, popupElementAddSelector, photoAddPopupFormSave, popupElementFullScreenSelector } from '../scripts/utils/constants.js'; 
+import {
+	initialCards,
+  configValidation,
+  profileNameSelector,
+  profileAboutSelector,
+  profileButtonEdit,
+  cardAddButton,
+  elementsSectionSelector,
+  cardTemplateSelector,
+  popupEditProfileSelector,
+  popupEditFormSave,
+  popupElementAddSelector,
+  photoAddPopupFormSave,
+  popupElementFullScreenSelector
+} from '../scripts/utils/constants.js'; 
 import { Card } from '../scripts/components/Card.js';
 import { FormValidator } from '../scripts/components/FormValidator.js';
 import { UserInfo } from '../scripts/components/UserInfo.js';
@@ -9,6 +25,7 @@ import { PopupWithForm } from '../scripts/components/PopupWithForm.js';
 
 
 const userInfo = new UserInfo (profileNameSelector, profileAboutSelector);
+
 
 
 const popupProfileEdit = new PopupWithForm({ 
@@ -22,8 +39,8 @@ const popupProfileEdit = new PopupWithForm({
 
 const popupCardAdd = new PopupWithForm({
 	selector: popupElementAddSelector,
-	handleSubmitForm: (data) => {
-		sectionCards.addNewItem(createCard(data));
+	handleSubmitForm: (item) => {
+		sectionCards.addNewItem(createCard(item));
 		popupCardAdd.close();
 	}
 });
@@ -39,31 +56,25 @@ const sectionCards = new Section ({
 });
 
 function createCard(data) {
-	const card = new Card({
-		dataCard: data, 
-		cardTemplateSelector: cardTemplateSelector, 
-		handlerCardClick: () => popupWithImage.open(data)
-});
+  const card = new Card({
+    dataCard: {
+      name: data.name,
+      link: data.link 
+    },
+    cardTemplate: cardTemplateSelector,
+    handlerCardClick: (name, link) => popupWithImage.open(name, link)
+  });
+  
+  console.log('Card data:', data);
+  console.log('Card:', card);
+  console.log('Generated card HTML:', card.generateCard());
 
-	return card.generatePhoto();
+  return card.generateCard();
 }
 
 
-profileButtonEdit.addEventListener('click', () => {
-	const currentInfoProfile = userInfo.getUserInfo();
-	popupEditProfile.setInputValues(currentInfoProfile);
-	popupProfileEdit.open();
-
-	popupEditFormValidator.resetValidation();
-});
-cardAddButton.addEventListener('click', () => {
-	popupCardAdd.open();
-	photoAddPopupFormValidator.resetValidation();
-});
-
-
-const popupEditFormValidator = new FormValidator(configValidation, popupEditFormSave);
-const photoAddPopupFormValidator = new FormValidator(configValidation, photoAddPopupFormSave);
+const popupEditFormValidator = new FormValidator(configValidation, popupEditProfileSelector);
+const photoAddPopupFormValidator = new FormValidator(configValidation, popupElementAddSelector);
 
 
 popupProfileEdit.setEventListeners();
@@ -75,3 +86,22 @@ sectionCards.sectionRenderer(initialCards);
 
 popupEditFormValidator.enableValidation();
 photoAddPopupFormValidator.enableValidation();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonEdit = document.querySelector('.profile__button-edit');
+  const buttonAdd = document.querySelector('.profile__button-add');
+
+  buttonEdit.addEventListener('click', () => {
+    const currentInfoProfile = userInfo.getUserInfo();
+    popupProfileEdit.setInputValues(currentInfoProfile);
+    popupProfileEdit.open();
+
+    popupEditFormValidator.resetValidation();
+  });
+
+  buttonAdd.addEventListener('click', () => {
+    popupCardAdd.open();
+    photoAddPopupFormValidator.resetValidation();
+  });
+});
