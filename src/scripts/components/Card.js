@@ -35,9 +35,6 @@ export class Card {
     this._cardElement.querySelector('.element__name').textContent = this._name;
     this._cardElementImg.src = this._link; 
 
-    console.log('Card name:', this._name);
-    console.log('Card link:', this._link);
-
     return this._cardElement;
   }
 

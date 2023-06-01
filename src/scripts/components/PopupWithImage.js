@@ -4,8 +4,6 @@ export class PopupWithImage extends Popup {
 	constructor ({ selector }) {
 		super({ selector });
 		this._image = this._popup.querySelector('.popup__element-img');
-
-		console.log('PopupWithImage image element:', this._image);
 		
 		this._name = this._popup.querySelector('.popup__element-name');
 	}

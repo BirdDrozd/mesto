@@ -18,8 +18,6 @@ export class Section {
 	}
 
 	addNewItem(item){
-		console.log('New item added:', item);
-
 		this._section.prepend(item);
 	}
 }

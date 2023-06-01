@@ -1,5 +1,3 @@
-console.log('Index.js loaded');
-
 import  './index.css';
 import {
 	initialCards,
@@ -45,7 +43,6 @@ const popupCardAdd = new PopupWithForm({
 	}
 });
 
-
 const popupWithImage = new PopupWithImage({ selector: popupElementFullScreenSelector });
 
 const sectionCards = new Section ({
@@ -64,10 +61,6 @@ function createCard(data) {
     cardTemplate: cardTemplateSelector,
     handlerCardClick: (name, link) => popupWithImage.open(name, link)
   });
-  
-  console.log('Card data:', data);
-  console.log('Card:', card);
-  console.log('Generated card HTML:', card.generateCard());
 
   return card.generateCard();
 }
