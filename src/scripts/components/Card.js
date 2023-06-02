@@ -15,7 +15,7 @@ export class Card {
       }
     };
 
-    this._cardElementImg = null;
+    this._cardElement = null;
   }
 
   _getTemplate() {
@@ -33,7 +33,8 @@ export class Card {
     this._handleCardButtonDelete = this._handleCardButtonDelete.bind(this);
     this._setEventListeners();
     this._cardElement.querySelector('.element__name').textContent = this._name;
-    this._cardElementImg.src = this._link; 
+    this._cardElementImg.src = this._link;
+    this._cardElementImg.alt = this._name;
 
     return this._cardElement;
   }
