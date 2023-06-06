@@ -1,18 +1,18 @@
-export class UserInfo {
-	constructor ( profileNameSelector, profileAboutSelector ) {
-		this._profileNameSelector = document.querySelector('.profile__name');
-		this._profileAboutSelector = document.querySelector('.profile__about');
-	}
+export class UserInfo { 
+	constructor (profileNameElement, profileAboutElement) { 
+		this._profileNameElement = profileNameElement; 
+		this._profileAboutElement = profileAboutElement; 
+	} 
 
-	getUserInfo() {
-		return {
-			name: this._profileNameSelector.textContent,
-			about: this._profileAboutSelector.textContent
-		};
-	}
+	getUserInfo() { 
+		return { 
+			name: this._profileNameElement.textContent, 
+			about: this._profileAboutElement.textContent 
+		}; 
+	} 
 
-	setUserInfo({name, about}) {
-		this._profileNameSelector.textContent = name;
-		this._profileAboutSelector.textContent = about;
-	}
+	setUserInfo({name, about}) { 
+		this._profileNameElement.textContent = name; 
+		this._profileAboutElement.textContent = about; 
+	} 
 }

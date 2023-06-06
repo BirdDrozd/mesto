@@ -1,8 +1,8 @@
 export { 
   initialCards,
   configValidation,
-  profileNameSelector,
-  profileAboutSelector,
+  profileNameElement,
+  profileAboutElement,
   profileButtonEdit,
   cardAddButton,
   elementsSectionSelector,
@@ -48,8 +48,9 @@ const configValidation = {
 	inputErrorClass: 'popup__input_value_wrong',
 	errorClass: 'popup__error_visible'
 };
-const profileNameSelector = '.profile__name';
-const profileAboutSelector = '.profile__about';
+
+const profileNameElement = document.querySelector('.profile__name');
+const profileAboutElement = document.querySelector('.profile__about');
 const profileButtonEdit = document.querySelector('.profile__button-edit');
 const cardAddButton = '.profile__button-add';
 const elementsSectionSelector = '.elements';

@@ -2,8 +2,8 @@ import  './index.css';
 import {
 	initialCards,
   configValidation,
-  profileNameSelector,
-  profileAboutSelector,
+  profileNameElement,
+  profileAboutElement,
   profileButtonEdit,
   cardAddButton,
   elementsSectionSelector,
@@ -22,7 +22,8 @@ import { PopupWithImage } from '../scripts/components/PopupWithImage.js';
 import { PopupWithForm } from '../scripts/components/PopupWithForm.js';
 
 
-const userInfo = new UserInfo (profileNameSelector, profileAboutSelector);
+const userInfo = new UserInfo (profileNameElement, profileAboutElement);
+
 
 
 
