@@ -1,0 +1,14 @@
+.card__img {
+	width: 100%;
+	grid-area: foto;
+	object-position: center;
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
+	transition: opacity 0.3s ease-in-out;
+	z-index: 0;
+	}
+	
+.card__img:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}

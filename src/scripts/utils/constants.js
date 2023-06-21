@@ -1,62 +1,51 @@
-export { 
-  initialCards,
-  configValidation,
-  profileNameElement,
-  profileAboutElement,
-  profileButtonEdit,
-  cardAddButton,
-  elementsSectionSelector,
-  cardTemplateSelector,
-  popupEditProfileSelector,
-  popupEditFormSave,
-  popupElementAddSelector,
-  photoAddPopupFormSave,
-  popupElementFullScreenSelector
+export {
+	configValidation,
+	avatarPageSelector,
+	avatarPageButtonOpen,
+	userNamePageSelector,
+	userAboutPageSelector,
+	userPageButtonOpen,
+	cardAddPageButtonOpen,
+	sectionCardsPageSelector,
+	cardTemplatePageId,
+	avatarPopupId,
+	avatarPopupForm,
+	userPopupId,
+	userPopupForm,
+	cardAddPopupSelector,
+	cardAddPopupForm,
+	cardLargePopupSelector,
+	submitPopupSelector,
 };
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  }
-];
+
 const configValidation = {
 	formSelector: '.popup__form',
 	inputSelector: '.popup__input',
 	saveButtonSelector: '.popup__button-save',
 	errorTemplateSelector: '.popup__error_type_',
 	buttonErrorClass: 'popup__button-save_disable',
-	inputErrorClass: 'popup__input_value_wrong',
-	errorClass: 'popup__error_visible'
+	inputErrorClass: 'popup__input_value_uncorrect',
+	errorClass: 'popup__error_visible',
 };
 
-const profileNameElement = document.querySelector('.profile__name');
-const profileAboutElement = document.querySelector('.profile__about');
-const profileButtonEdit = document.querySelector('.profile__button-edit');
-const cardAddButton = '.profile__button-add';
-const elementsSectionSelector = '.elements';
-const cardTemplateSelector = '#element__template';
-const popupEditProfileSelector = '#profile';
-const popupEditFormSave = '.popup__form';
-const popupElementAddSelector = '#element-add';
-const photoAddPopupFormSave = '.popup__form';
-const popupElementFullScreenSelector = '#element-full-screen';
+
+const avatarPageSelector = '.user__avatar';
+const avatarPageButtonOpen = document.querySelector('.user__avatar-wrap');
+const userNamePageSelector = '.user__name';
+const userAboutPageSelector = '.user__about';
+const userPageButtonOpen = document.querySelector('.user__button-edit');
+const cardAddPageButtonOpen = document.querySelector('.user__button-add');
+const sectionCardsPageSelector = '.card';
+const cardTemplatePageId = '#card__template';
+const avatarPopupId = '#avatar';
+const avatarEditPopup = document.querySelector('#avatar');
+const avatarPopupForm = avatarEditPopup.querySelector('.popup__form');
+const userPopupId = '#user';
+const userEditPopup = document.querySelector('#user');
+const userPopupForm = userEditPopup.querySelector('.popup__form');
+const cardAddPopupSelector = '#card-add';
+const cardAddPopupForm = document
+	.querySelector(cardAddPopupSelector)
+	.querySelector('.popup__form');
+const cardLargePopupSelector = '#card-full-screen';
+const submitPopupSelector = '#submit';

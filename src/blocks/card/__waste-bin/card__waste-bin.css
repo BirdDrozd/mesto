@@ -1,0 +1,16 @@
+.card__waste-bin {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	padding: 0;
+	border: none;
+	width: 18px;
+	height: 19px;
+	background: center / cover url(../../../images/icon-trash-bin.svg);
+	z-index: 1;
+}
+
+.card__waste-bin:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}

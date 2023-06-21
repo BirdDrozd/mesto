@@ -1,4 +1,4 @@
-export class Section {
+class Section {
 	constructor({ renderer, selector }) {
 		this._renderer = renderer;
 		this._section = document.querySelector(selector);
@@ -14,10 +14,12 @@ export class Section {
 	}
 
 	addRenderedItem(item){
-		this._section.append(item);
+		this._section.append(item)
 	}
 
 	addNewItem(item){
-		this._section.prepend(item);
+		this._section.prepend(item)
 	}
 }
+
+export { Section }
